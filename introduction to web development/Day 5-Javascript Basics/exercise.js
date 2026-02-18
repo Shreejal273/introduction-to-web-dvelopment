@@ -26,9 +26,11 @@ buttonCalculate.addEventListener("click", function () {
   if (!humanAge || humanAge <= 0) {
     textResult.textContent = "Please enter a valid age.";
     ageInput.style.border = "2px solid red";
+    textResult.style.color = "red";
     return;
   }
-
+  ageInput.style.border = "1px solid #ccc";
+  textResult.style.color = "black";
   let dogAge;
 
   if (humanAge <= 15) {
@@ -39,6 +41,6 @@ buttonCalculate.addEventListener("click", function () {
     dogAge = 2 + (humanAge - 24) / 5;
   }
 
-  dogAge = dogAge.toFixed(2);
+  dogAge = dogAge.toFixed(1);
   textResult.textContent = `your dog age is ${dogAge}`;
 });
